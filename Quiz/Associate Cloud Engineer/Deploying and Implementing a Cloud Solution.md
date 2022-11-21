@@ -87,6 +87,7 @@ You need to analyze and act on files being added to a Cloud Storage bucket. Your
 
 --trigger-event google.storage.object.create
 (Incorrect. This is not a cloud storage notification event.)
+
 --trigger-event google.storage.object.change
 
 --trigger-event google.storage.object.add
