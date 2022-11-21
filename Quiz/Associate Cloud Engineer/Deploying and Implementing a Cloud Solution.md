@@ -24,6 +24,8 @@ Cymbal Superstore asks you to implement Cloud SQL as a database backend to their
 (Incorrect. This option creates a read replica based on the master instance. It replicates data but does not automate failover.)
 
 --availability-type
+(Correct! This option allows you to specify zonal or regional availability, with regional providing automatic failover to a standby node in another region.)
+
 
 3.
 Cymbal Superstore’s sales department has a medium-sized MySQL database. This database includes user-defined functions and is used internally by the marketing department at Cymbal Superstore HQ. The sales department asks you to migrate the database to Google Cloud in the most timely and economical way. What should you do?
@@ -103,6 +105,7 @@ You need to analyze and act on files being added to a Cloud Storage bucket. Your
 (Incorrect. This is not a cloud storage notification event.)
 
 --trigger-event google.storage.object.finalize
+(Correct! Finalize event trigger when a write to Cloud Storage is complete.)
 
 
 9.
