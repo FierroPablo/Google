@@ -18,6 +18,7 @@ Cymbal Superstore asks you to implement Cloud SQL as a database backend to their
 (Incorrect. If you have --master-instance-name, this option allows you to define the replica type: a default of read, or a legacy MySQL replica type of failover, which has been deprecated.)
 
 --secondary-zone
+(Incorrect. This is an optional argument that is valid only when you have a specified availability type: regional.)
 
 --master-instance-name
 (Incorrect. This option creates a read replica based on the master instance. It replicates data but does not automate failover.)
@@ -44,6 +45,7 @@ App Engine standard environment
 (Incorrect. App Engine standard environment does not allow custom packages.)
 
 Cloud Run
+(Correct! Cloud Run is serverless, exposes your services as an endpoint, and abstracts all infrastructure.)
 
 Cloud Functions
 
@@ -98,8 +100,10 @@ You need to analyze and act on files being added to a Cloud Storage bucket. Your
 (Incorrect. This is not a cloud storage notification event.)
 
 --trigger-event google.storage.object.add
+(Incorrect. This is not a cloud storage notification event.)
 
 --trigger-event google.storage.object.finalize
+
 
 9.
 Cymbal Superstore’s marketing department needs to load some slowly changing data into BigQuery. The data arrives hourly in a Cloud Storage bucket. You want to minimize cost and implement this in the fewest steps. What should you do?
