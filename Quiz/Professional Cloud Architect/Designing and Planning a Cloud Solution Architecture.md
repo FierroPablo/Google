@@ -2,7 +2,7 @@
 1.
 Cymbal Direct is working with Cymbal Retail, a separate, autonomous division of Cymbal with different staff, networking teams, and data center. Cymbal Direct and Cymbal Retail are not in the same Google Cloud organization. Cymbal Retail needs access to Cymbal Direct’s web application for making bulk orders, but the application will not be available on the public internet. You want to ensure that Cymbal Retail has access to your application with low latency. You also want to avoid egress network charges if possible. What should you do?
 
-Verify that the subnet range Cymbal Retail is using doesn’t overlap with Cymbal Direct’s subnet range, and then enable VPC Network Peering for the project.
+**Verify that the subnet range Cymbal Retail is using doesn’t overlap with Cymbal Direct’s subnet range, and then enable VPC Network Peering for the project.**
 (Correct! VPC Peering allows for shared networking between organizations.)
 
 Specify Cymbal Direct’s project as the Shared VPC host project, and then configure Cymbal Retail’s project as a service project.
@@ -17,7 +17,7 @@ You are working with a client who is using Google Kubernetes Engine (GKE) to mig
 In Cloud Shell, create a YAML file defining your Deployment called deployment.yaml. Create a Deployment in GKE by running the command kubectl apply -f deployment.yaml
 (Incorrect. A Deployment represents multiple identical Pods. A Deployment is used to ensure that Pods are available, but it does not attempt to maintain state. Containers are considered disposable. The kubectl command can be used from gcloud to create or modify deployments defined in a YAML file or manifest.)
 
-In Cloud Shell, create a YAML file defining your StatefulSet called statefulset.yaml. Create a StatefulSet in GKE by running the command kubectl apply -f statefulset.yaml
+**In Cloud Shell, create a YAML file defining your StatefulSet called statefulset.yaml. Create a StatefulSet in GKE by running the command kubectl apply -f statefulset.yaml**
 (Correct! A StatefulSet represents a group of persistent Pods. The YAML file will define a PersistentVolumeClaim (PVC) that allows for an application to retain state. A StatefulSet is commonly used with applications like databases.)
 
 In Cloud Shell, create a YAML file defining your Container called build.yaml. Create a Container in GKE by running the command gcloud builds submit –config build.yaml .
@@ -28,7 +28,7 @@ In Cloud Shell, create a YAML file defining your Pod called pod.yaml. Create a P
 3.
 You are working in a mixed environment of VMs and Kubernetes. Some of your resources are on-premises, and some are in Google Cloud. Using containers as a part of your CI/CD pipeline has sped up releases significantly. You want to start migrating some of those VMs to containers so you can get similar benefits. You want to automate the migration process where possible. What should you do?
 
-Manually create a GKE cluster, and then use Migrate for Anthos to set up the cluster, import VMs, and convert them to containers.
+**Manually create a GKE cluster, and then use Migrate for Anthos to set up the cluster, import VMs, and convert them to containers.**
 (Correct. You must initially create a GKE cluster. Then you can use Migrate for Anthos to set up the cluster and import the VMs.)
 
 Manually create a GKE cluster. Use Cloud Build to import VMs and convert them to containers.
@@ -45,7 +45,7 @@ Extract the data from MongoDB. Insert the data into Firestore using Datastore mo
 
 Extract the data from MongoDB. Insert the data into Firestore using Native mode.
 
-Create a Bigtable instance, extract the data from MongoDB, and insert the data into Bigtable.
+**Create a Bigtable instance, extract the data from MongoDB, and insert the data into Bigtable.**
 (Correct! Bigtable is ideal for IoT, gives consistently sub-10ms latency, and can be used at a petabyte scale.)
 
 Extract the data from MongoDB, and insert the data into BigQuery.
@@ -60,7 +60,8 @@ Eighty-five percent of customers are satisfied users
 Low latency for > 85% of requests when aggregated over 1 minute
 (Incorrect. KPIs must be specific and measurable. The word ‘low’ does not provide enough information to determine whether latency is acceptable. You should be able to compare your measurement against a threshold value to determine whether it is acceptable.)
 
-Eighty-five percent of requests succeed when aggregated over 1 minute
+**Eighty-five percent of requests succeed when aggregated over 1 minute**
+(Correct! This is specific, and you can reasonably expect to meet this KPI.)
 
 Eighty-five percent of requests are successful
 (Incorrect. This KPI is not bounded by time. You could have 100% success during one period of time and 75% during another, but the average (87.5) uptime would exceed the KPI.)
@@ -75,7 +76,7 @@ Make sure that the application declares any dependent requirements in a requirem
 
 Make sure that the application declares any dependent requirements in a requirements.txt or equivalent statement so that they can be referenced in a startup script. Specify the startup script in a managed instance group template, and use an autoscaling policy.
 
-Use containers instead of VMs, and use a GKE autoscaling deployment.
+**Use containers instead of VMs, and use a GKE autoscaling deployment.**
 (Correct! Treating each app as one or more stateless processes means externalizing state to a separate database service. This allows for more concurrent processing.)
 
 7.
@@ -89,7 +90,7 @@ Order a Partner Interconnect from a Google Cloud partner, and ensure that proper
 
 Connect the network to a Google point of presence, and enable Direct Peering.
 
-Connect the on-premises network to Google’s public infrastructure via a partner that supports Carrier Peering.
+**Connect the on-premises network to Google’s public infrastructure via a partner that supports Carrier Peering.**
 (Correct! Carrier Peering allows using a Google partner to connect to Google public infrastructure, such as Workspace or YouTube.)
 
 8.
@@ -100,7 +101,7 @@ Ingest data with IoT Core, process it with Dataprep, and store it in a Coldline 
 
 Ingest data with IoT Core, and then publish to Pub/Sub. Use BigQuery to process the data, and store it in a Standard Cloud Storage bucket.
 
-Ingest data with IoT Core, and then publish to Pub/Sub. Use Dataflow to process the data, and store it in a Nearline Cloud Storage bucket.
+**Ingest data with IoT Core, and then publish to Pub/Sub. Use Dataflow to process the data, and store it in a Nearline Cloud Storage bucket.**
 (Correct! Dataflow is a fully managed service that can be used to process both streams and batches of data. Nearline is a good fit because the data could be accessed every month.)
 
 Ingest data with IoT Core, and then store it in BigQuery.
@@ -111,7 +112,7 @@ Cymbal Direct developers have written a new application. Based on initial usage 
 Stop the instance, and then use the command gcloud compute instances set-machine-type VM_NAME --machine-type e2-standard-8. Start the instance again.
 (Incorrect. An e2-standard-8 instance will have the appropriate amount of memory. However, this instance type will have more CPU than necessary and incur additional unnecessary costs.)
 
-Stop the instance, and then use the command gcloud compute instances set-machine-type VM_NAME --machine-type 2-custom-4-30720. Start the instance again.
+**Stop the instance, and then use the command gcloud compute instances set-machine-type VM_NAME --machine-type 2-custom-4-30720. Start the instance again.**
 (Correct! Custom instances are a good way to optimize costs. You don’t have to pay for resources you don’t need.)
 
 Stop the instance, and then use the command gcloud compute instances set-machine-type VM_NAME --machine-type e2-standard-8. Set the instance’s metadata to: preemptible: true. Start the instance again.
@@ -125,7 +126,7 @@ You are creating a new project. You plan to set up a Dedicated interconnect betw
 Create a new project, leave the default network in place, and then use the default 10.x.x.x network range to create subnets in your desired regions.
 (Incorrect. Default mode networks create subnets for you automatically in each zone and could allow people to accidentally provision resources in other regions.)
 
-Create a new project, delete the default VPC network, set up a custom mode VPC network, and then use IP addresses in the 172.16.x.x address range to create subnets in your desired regions.
+**Create a new project, delete the default VPC network, set up a custom mode VPC network, and then use IP addresses in the 172.16.x.x address range to create subnets in your desired regions.**
 (Correct! Custom networks give you full control.)
 
 Create a new project, delete the default VPC network, set up an auto mode VPC network, and then use the default 10.x.x.x network range to create subnets in your desired regions.
