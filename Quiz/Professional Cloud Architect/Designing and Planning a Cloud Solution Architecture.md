@@ -18,6 +18,7 @@ In Cloud Shell, create a YAML file defining your Deployment called deployment.ya
 (Incorrect. A Deployment represents multiple identical Pods. A Deployment is used to ensure that Pods are available, but it does not attempt to maintain state. Containers are considered disposable. The kubectl command can be used from gcloud to create or modify deployments defined in a YAML file or manifest.)
 
 In Cloud Shell, create a YAML file defining your StatefulSet called statefulset.yaml. Create a StatefulSet in GKE by running the command kubectl apply -f statefulset.yaml
+(Correct! A StatefulSet represents a group of persistent Pods. The YAML file will define a PersistentVolumeClaim (PVC) that allows for an application to retain state. A StatefulSet is commonly used with applications like databases.)
 
 In Cloud Shell, create a YAML file defining your Container called build.yaml. Create a Container in GKE by running the command gcloud builds submit –config build.yaml .
 
@@ -45,6 +46,7 @@ Extract the data from MongoDB. Insert the data into Firestore using Datastore mo
 Extract the data from MongoDB. Insert the data into Firestore using Native mode.
 
 Create a Bigtable instance, extract the data from MongoDB, and insert the data into Bigtable.
+(Correct! Bigtable is ideal for IoT, gives consistently sub-10ms latency, and can be used at a petabyte scale.)
 
 Extract the data from MongoDB, and insert the data into BigQuery.
 (Incorrect. BigQuery is used for Enterprise data warehouse and building reports and extracting insights. Bigtable meets the requirements for consistent low latency, scaling throughput seamlessly, and petabyte-scale.)
@@ -56,6 +58,7 @@ Eighty-five percent of customers are satisfied users
 (Incorrect. KPIs must be specific and measurable. ‘Satisfied’ is not specific, and the KPI is not bounded by a period of time.)
 
 Low latency for > 85% of requests when aggregated over 1 minute
+(Incorrect. KPIs must be specific and measurable. The word ‘low’ does not provide enough information to determine whether latency is acceptable. You should be able to compare your measurement against a threshold value to determine whether it is acceptable.)
 
 Eighty-five percent of requests succeed when aggregated over 1 minute
 
@@ -87,6 +90,7 @@ Order a Partner Interconnect from a Google Cloud partner, and ensure that proper
 Connect the network to a Google point of presence, and enable Direct Peering.
 
 Connect the on-premises network to Google’s public infrastructure via a partner that supports Carrier Peering.
+(Correct! Carrier Peering allows using a Google partner to connect to Google public infrastructure, such as Workspace or YouTube.)
 
 8.
 Cymbal Direct drones continuously send data during deliveries. You need to process and analyze the incoming telemetry data. After processing, the data should be retained, but it will only be accessed once every month or two. Your CIO has issued a directive to incorporate managed services wherever possible. You want a cost-effective solution to process the incoming streams of data. What should you do?
@@ -108,6 +112,7 @@ Stop the instance, and then use the command gcloud compute instances set-machine
 (Incorrect. An e2-standard-8 instance will have the appropriate amount of memory. However, this instance type will have more CPU than necessary and incur additional unnecessary costs.)
 
 Stop the instance, and then use the command gcloud compute instances set-machine-type VM_NAME --machine-type 2-custom-4-30720. Start the instance again.
+(Correct! Custom instances are a good way to optimize costs. You don’t have to pay for resources you don’t need.)
 
 Stop the instance, and then use the command gcloud compute instances set-machine-type VM_NAME --machine-type e2-standard-8. Set the instance’s metadata to: preemptible: true. Start the instance again.
 
