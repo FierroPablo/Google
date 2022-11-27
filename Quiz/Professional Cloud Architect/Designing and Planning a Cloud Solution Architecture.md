@@ -4,11 +4,8 @@ Cymbal Direct is working with Cymbal Retail, a separate, autonomous division of 
 
 **-Verify that the subnet range Cymbal Retail is using doesn’t overlap with Cymbal Direct’s subnet range, and then enable VPC Network Peering for the project.**
 (Correct! VPC Peering allows for shared networking between organizations.)
-
 -Specify Cymbal Direct’s project as the Shared VPC host project, and then configure Cymbal Retail’s project as a service project.
-
 -If Cymbal Retail does not have access to a Google Cloud data center, use Carrier Peering to connect the two networks.
-
 -Verify that the subnet Cymbal Retail is using has the same IP address range with Cymbal Direct’s subnet range, and then enable VPC Network Peering for the project.
 
 2.
