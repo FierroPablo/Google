@@ -8,8 +8,8 @@ _(Incorrect. Mirror your Google Cloud resource hierarchy structure to match your
 
 -Keep all resources in one project, but change the resource hierarchy to reflect company organization.
 
--Use multiple projects with established trust boundaries, and change the resource hierarchy to reflect company organization.
-
+**-Use multiple projects with established trust boundaries, and change the resource hierarchy to reflect company organization.**
+_(Correct! Because the environment has evolved, update the IAM resource hierarchy to reflect the changes. Use projects to group resources that share the same trust boundary.)_
 
 2.
 Michael is the owner/operator of “Zneeks,” a retail shoe store that caters to sneaker aficionados. He regularly works with customers who order small batches of custom shoes. Michael is interested in using Cymbal Direct to manufacture and ship custom batches of shoes to these customers. Reasonably tech-savvy but not a developer, Michael likes using Cymbal Direct's partner purchase portal but wants the process to be easy. What is an example of a user story that could describe Michael’s persona?
@@ -22,7 +22,7 @@ _(Incorrect. This does not describe the user, what they want to do, or the benef
 -Michael is a tech-savvy owner/operator of a small business.
 
 -Michael is reasonably tech-savvy but needs Cymbal Direct's partner purchase portal to be easy
-
+_(Incorrect. This does not describe what he wants to do with the partner portal.)_
 
 3.
 Cymbal Direct is experiencing success using Google Cloud and you want to leverage tools to make your solutions more efficient. Erik, one of the original web developers, currently adds new products to your application manually. Erik has many responsibilities and requires a long lead time to add new products. You need to create an App Engine application to let Cymbal Direct employees add new products instead of waiting for Erik. However, you want to make sure that only authorized employees can use the application. What should you do?
@@ -34,8 +34,8 @@ _(Incorrect. Project Owner gives out much more access than necessary and doesn't
 
 -Use Google Cloud Armor to restrict access to the corporate network's external IP address. Configure firewall rules to allow only HTTP(S) access.
 
--Create a Google group and add authorized employees to it. Configure Identity-Aware Proxy (IAP) to the App Engine application as a HTTP-resource. Add the group as a principle with the role "IAP-secured Web App User."
-
+**-Create a Google group and add authorized employees to it. Configure Identity-Aware Proxy (IAP) to the App Engine application as a HTTP-resource. Add the group as a principle with the role "IAP-secured Web App User."**
+_(Correct! You could use individual accounts to give out access instead of a group, and by doing so you make access more manageable. Identity-Aware Proxy is a great tool for exactly this kind of issue.)_
 
 4.
 You've recently created an internal App Engine application for developers in your organization. The application lets developers clone production Cloud SQL databases into a project specifically created to test code and deployments. Your previous process was to export a database to a Cloud Storage bucket, and then import the SQL dump into a legacy on-premises testing environment database with connectivity to Google Cloud via Cloud VPN. Management wants to incentivize using the new process with Cloud SQL for rapid testing and track how frequently rapid testing occurs. How can you ensure that the developers use the new process?
@@ -47,8 +47,8 @@ _(Incorrect. You cannot add or remove abilities to a predefined role. Predefined
 
 -Leave the ACLs on the Cloud Storage bucket as-is. Disable Cloud VPN, and have developers use Identity-Aware Proxy (IAP) to connect. Create an organization policy to enforce public access protection.
 
--Create a custom role to restrict access to what developers are allowed to do. Create a group for the developers, and associate the group with your custom role. Ensure that the custom role does not have "cloudsql.instances.export."
-
+**-Create a custom role to restrict access to what developers are allowed to do. Create a group for the developers, and associate the group with your custom role. Ensure that the custom role does not have "cloudsql.instances.export."**
+_(Correct! In this scenario, using a predefined role is inappropriate because the most appropriate predefined role, Cloud SQL Viewer, contains the cloudsql.instances.export capability, which would allow the database to be exported.)_
 
 5.
 Cymbal Direct’s social media app must run in a separate project from its APIs and web store. You want to use Identity and Access Management (IAM) to ensure a secure environment. How should you set up IAM?
@@ -69,6 +69,7 @@ Cymbal Direct wants to use Identity and Access Management (IAM) to allow employe
 _(Incorrect. Whenever possible, use groups to manage access. It is much easier to add or remove individuals from groups than manage permissions at the individual level.)_
 
 -Grant access by assigning custom roles to groups. Use multiple groups for better control. Give access as low in the hierarchy as possible to prevent the inheritance of too many abilities from a higher level.
+_(Incorrect. Unless there is a specific need for a custom role, you should use predefined ones.)_
 
 -Grant access by assigning predefined roles to groups. Use multiple groups for better control. Give access as low in the hierarchy as possible to prevent the inheritance of too many abilities from a higher level.
 
@@ -81,7 +82,8 @@ Cymbal Direct has an application running on a Compute Engine instance. You need 
 -Create a service account for the instance. Use Access scopes to enable access to the required services.
 _(Incorrect. Access scopes are used with the Compute Engine default service account.)_
 
--Create a service account for each of the services the VM needs to access. Associate the service accounts with the Compute Engine instance.
+**-Create a service account for each of the services the VM needs to access. Associate the service accounts with the Compute Engine instance.**
+_(Incorrect. A Compute Engine instance is associated with only one service account.)_
 
 -Create a service account and assign it the project owner role, which enables access to any needed service.
 
@@ -99,7 +101,7 @@ _(Incorrect. If VMs do not need to be accessed by the outside world, they should
 -Limit access to the external IP addresses of the VM instances using firewall rules and place them in a private VPC behind Cloud NAT. Any SSH connection for management should be done with Identity-Aware Proxy (IAP) or a bastion host (jump box) after allowing SSH access from IAP or a corporate network.
 
 -Remove external IP addresses from the VM instances running the social media service and place them in a private VPC behind Cloud NAT. Any SSH connection for management should be restricted to corporate network IP addresses by Google Cloud Armor.
-
+_(Incorrect. Without using IAP or a bastion host, the corporate network would have no way of connecting to the VMs, because VMs have no external IP addresses.)_
 
 9.
 You have several Compute Engine instances running NGINX and Tomcat for a web application. In your web server logs, many login failures come from a single IP address, which looks like a brute force attack. How can you block this traffic?
@@ -118,7 +120,7 @@ _(Correct! Configuring a Google Cloud Armor rule to prevent that IP address from
 Your client is legally required to comply with the Payment Card Industry Data Security Standard (PCI-DSS). The client has formal audits already, but the audits are only done periodically. The client needs to monitor for common violations to meet those requirements more easily. The client does not want to replace audits but wants to engage in continuous compliance and catch violations early. What would you recommend that this client do?
 Responses:
 
-**-Enable the Security Command Center (SCC) dashboard, asset discovery, and Security Health Analytics in the Premium tier. Export or view the PCI-DSS Report from the SCC dashboard's Vulnerabilities tab.**
+-Enable the Security Command Center (SCC) dashboard, asset discovery, and Security Health Analytics in the Premium tier. Export or view the PCI-DSS Report from the SCC dashboard's Vulnerabilities tab.
 _(Incorrect. The reports relating to compliance vulnerabilities are on the Compliance tab.)_
 
 -Enable the Security Command Center (SCC) dashboard, asset discovery, and Security Health Analytics in the Premium tier. Export or view the PCI-DSS Report from the SCC dashboard's Compliance tab.
