@@ -5,6 +5,7 @@ Your development team used Cloud Source Repositories, Cloud Build, and Artifact 
 _(Incorrect. Runtime environments do not need access to Cloud Source Repositories as part of the deployment process.)_
 
 -The runtime environment does not have permissions to the Artifact Registry in your current project.
+_(Incorrect. Runtime environments have read access permissions to Artifact Registry in the same project.)_
 
 -You need to specify the Artifact Registry image by name.
 
@@ -30,7 +31,8 @@ The number of requests received by your application is nearing the maximum speci
 -Applying exponential backoff
 _(Incorrect. Exponential backoff increases the amount of time between retry requests. It does not limit them.)_
 
--Applying a circuit breaker
+**-Applying a circuit breaker**
+_(Correct! A circuit breaker limits requests based on a threshold that you specify.)_
 
 -Applying graceful degradation
 
@@ -57,6 +59,7 @@ You want to establish procedures for testing the resilience of the delivery-by-d
 _(Incorrect. Health checks help address availability needs.)_
 
 -Block access to storage assets in one of your zones.
+_(Incorrect. Ensuring that your data remains available in an outage is part of durability.)_
 
 -Block access to all resources in a zone.
 
@@ -69,7 +72,8 @@ You have an application implemented on Compute Engine. You want to increase the 
 -Implement a regional managed instance group.
 _(Incorrect. Managed instance groups improve availability, not durability.)_
 
--Implement a scheduled snapshot on your Compute Engine instances.
+**-Implement a scheduled snapshot on your Compute Engine instances.**
+_(Correct! Durability ensures that your data is protected and available. Snapshots are a viable way of backing up your data in Compute Engine.)_
 
 -Perform health checks on your Compute Engine instances.
 
@@ -83,6 +87,7 @@ The pilot subsystem in your Delivery by Drone service is critical to your servic
 _(Incorrect. Cloud Load Balancing helps distribute traffic across machines in multiple instance groups. It does not heal or scale VMs.)_
 
 -Configure proper startup scripts for your VMs.
+_(Incorrect. Startup scripts ensure that your machines are properly configured and ready to run your app. They do not help with outages.)_
 
 -Implement a managed instance group.
 
@@ -96,6 +101,7 @@ You are asked to implement a lift and shift operation for Cymbal Direct’s Soci
 _(Incorrect. You should run the init command before you run the plan command.)_
 
 -Commit the configuration file to your software repository.
+_(Incorrect. You should run init and run plan on your Terraform workflow before you commit the validated configuration file to your software repository.)_
 
 -Run terraform init to download the necessary provider modules.
 
@@ -121,7 +127,8 @@ You are implementing a disaster recovery plan for the cloud version of your dron
 -Warm with a high recovery time objective (RTO)
 _(Incorrect. A warm design pattern would consist of a standby system that you would fail over to if something went wrong. The RTO would be higher than with a hot design pattern.)_
 
--Hot with a low recovery time objective (RTO)
+**-Hot with a low recovery time objective (RTO)**
+_(Correct! Safety and compliance require your application to have a low RTO, so you need a hot design pattern with minimal downtime.)_
 
 -Hot with a high recovery time objective (RTO)
 
