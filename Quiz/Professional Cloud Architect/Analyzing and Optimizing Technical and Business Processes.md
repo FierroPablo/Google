@@ -8,6 +8,7 @@ _(Incorrect. Runtime environments do not need access to Cloud Source Repositorie
 _(Incorrect. Runtime environments have read access permissions to Artifact Registry in the same project.)_
 
 -You need to specify the Artifact Registry image by name.
+_(Incorrect. In Artifact Registry, you need to identify images by tag or digest.)_
 
 -The Artifact Registry might be in a different project.
 
@@ -62,6 +63,7 @@ _(Incorrect. Health checks help address availability needs.)_
 _(Incorrect. Ensuring that your data remains available in an outage is part of durability.)_
 
 -Block access to all resources in a zone.
+_(Incorrect. Responding to outages of zonal resources is a key capability in addressing availability.)_
 
 -Load test your application to see how it responds.
 
@@ -89,7 +91,8 @@ _(Incorrect. Cloud Load Balancing helps distribute traffic across machines in mu
 -Configure proper startup scripts for your VMs.
 _(Incorrect. Startup scripts ensure that your machines are properly configured and ready to run your app. They do not help with outages.)_
 
--Implement a managed instance group.
+**-Implement a managed instance group.**
+_(Correct! Managed instance groups offer scaling and autohealing that automatically replaces the instances that are not responding.)_
 
 -Create persistent disk snapshots.
 
@@ -103,7 +106,8 @@ _(Incorrect. You should run the init command before you run the plan command.)_
 -Commit the configuration file to your software repository.
 _(Incorrect. You should run init and run plan on your Terraform workflow before you commit the validated configuration file to your software repository.)_
 
--Run terraform init to download the necessary provider modules.
+**-Run terraform init to download the necessary provider modules.**
+_(Correct! Running init in the directory containing your Terraform configuration file ensures that the correct plugins are loaded for the providers and resources requested.)_
 
 -Run terraform apply to deploy the resources described in the configuration file.
 
