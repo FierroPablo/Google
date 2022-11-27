@@ -10,7 +10,8 @@ _(Incorrect. Using the debugger bundled with Python releases is an option, but b
 -Use ssh to connect to the Compute Engine instance where Cloud Run is running. Run the command 'python3 -m pdb app.py' to debug the application.
 _(Incorrect. Cloud Run runs as a container, not a Compute Engine instance directly. Using the debugger bundled with Python releases is an option, but because Cloud Debugger does not affect the user, it is a better choice)_
 
--Modify the Dockerfile for the Cloud Run application. Add 'RUN 'pip install google-python-cloud-debugger' to the Dockerfile. Modify the script to import googleclouddebugger. Use 'gcloud debug' to debug the application.
+**-Modify the Dockerfile for the Cloud Run application. Add 'RUN 'pip install google-python-cloud-debugger' to the Dockerfile. Modify the script to import googleclouddebugger. Use 'gcloud debug' to debug the application.**
+_(Correct! This approach allows for debugging applications that run in production without disrupting the user.)_
 
 
 2.
@@ -109,7 +110,8 @@ _(Incorrect. This answer is more appropriate for a critical incident. This respo
 -Increase the maximum number of instances in the MIG and verify that this resolves the issue. Ensure that the ticket is annotated with your solution. Create a normal work ticket for the application developer with a link to the incident. Mark the incident as closed.
 _(Incorrect. Google Cloud’s operations suite will close an incident if the alerting condition is no longer being met.)_
 
--Increase the maximum number of instances in the MIG and verify that this resolves the issue.
+**-Increase the maximum number of instances in the MIG and verify that this resolves the issue.**
+_(Correct! This appropriately responds to the issue by increasing the number of instances and doesn't require a “heroic effort” by having the developer or response team resolve the issue in the middle of the night.)_
 
 
 9.
@@ -124,7 +126,8 @@ _(Incorrect. An agile development process should generally reduce the time betwe
 -Adopt a “waterfall” development process. Maintain the current release schedule. Ensure that documentation explains how all the features interact. Ensure that the entire application is tested in a staging environment before the release. Ensure that the process to roll back the release is documented. Use Cloud Monitoring, Cloud Logging, and Cloud Alerting to ensure visibility.
 _(Incorrect. A waterfall process means that you are generally targeting large full releases. This approach was appropriate for boxed software that incurred significant costs in terms of time, manufacturing resources, infrastructure, and expense for a release. Larger releases are more complex and more likely to break, and they are difficult to troubleshoot because many changes are made at the same time. Smaller, frequent releases with an automated build process that includes integrated testing with Test Driven Development (TDD) are less likely to require rollbacks, and rollbacks are simpler.)_
 
--Adopt an “agile” development process. Reduce the time between releases as much as possible. Automate the build process from a source repository, which includes versioning and self-testing. Use Cloud Monitoring, Cloud Logging, and Cloud Alerting to ensure visibility. Use a canary deployment to detect issues that could cause rollback.
+**-Adopt an “agile” development process. Reduce the time between releases as much as possible. Automate the build process from a source repository, which includes versioning and self-testing. Use Cloud Monitoring, Cloud Logging, and Cloud Alerting to ensure visibility. Use a canary deployment to detect issues that could cause rollback.**
+_(Correct! A modern CI/CD pipeline lets you release smaller changes more frequently and includes integrated testing. Using a canary deployment can let you detect issues before you deploy your new version at scale.)_
 
 
 10.
