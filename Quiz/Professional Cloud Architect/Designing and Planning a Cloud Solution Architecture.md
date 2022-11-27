@@ -22,6 +22,7 @@ In Cloud Shell, create a YAML file defining your StatefulSet called statefulset.
 In Cloud Shell, create a YAML file defining your Container called build.yaml. Create a Container in GKE by running the command gcloud builds submit –config build.yaml .
 
 In Cloud Shell, create a YAML file defining your Pod called pod.yaml. Create a Pod in GKE by running the command kubectl apply -f pod.yaml
+(Incorrect. A Pod is the smallest unit of Deployment and contains one or more containers. A Pod doesn’t define how many containers must be running, so they’re generally managed by the Deployment or StatefulSet.)
 
 3.
 You are working in a mixed environment of VMs and Kubernetes. Some of your resources are on-premises, and some are in Google Cloud. Using containers as a part of your CI/CD pipeline has sped up releases significantly. You want to start migrating some of those VMs to containers so you can get similar benefits. You want to automate the migration process where possible. What should you do?
@@ -46,6 +47,7 @@ Extract the data from MongoDB. Insert the data into Firestore using Native mode.
 Create a Bigtable instance, extract the data from MongoDB, and insert the data into Bigtable.
 
 Extract the data from MongoDB, and insert the data into BigQuery.
+(Incorrect. BigQuery is used for Enterprise data warehouse and building reports and extracting insights. Bigtable meets the requirements for consistent low latency, scaling throughput seamlessly, and petabyte-scale.)
 
 5.
 Customers need to have a good experience when accessing your web application so they will continue to use your service. You want to define key performance indicators (KPIs) to establish a service level objective (SLO). Which KPI could you use?
@@ -58,6 +60,7 @@ Low latency for > 85% of requests when aggregated over 1 minute
 Eighty-five percent of requests succeed when aggregated over 1 minute
 
 Eighty-five percent of requests are successful
+(Incorrect. This KPI is not bounded by time. You could have 100% success during one period of time and 75% during another, but the average (87.5) uptime would exceed the KPI.)
 
 6.
 Cymbal Direct has created a proof of concept for a social integration service that highlights images of its products from social media. The proof of concept is a monolithic application running on a single SuSE Linux virtual machine (VM). The current version requires increasing the VM’s CPU and RAM in order to scale. You would like to refactor the VM so that you can scale out instead of scaling up. What should you do?
@@ -70,6 +73,7 @@ Make sure that the application declares any dependent requirements in a requirem
 Make sure that the application declares any dependent requirements in a requirements.txt or equivalent statement so that they can be referenced in a startup script. Specify the startup script in a managed instance group template, and use an autoscaling policy.
 
 Use containers instead of VMs, and use a GKE autoscaling deployment.
+(Correct! Treating each app as one or more stateless processes means externalizing state to a separate database service. This allows for more concurrent processing.)
 
 7.
 Cymbal Direct's employees will use Google Workspace. Your current on-premises network cannot meet the requirements to connect to Google's public infrastructure. What should you do?
@@ -78,6 +82,7 @@ Order a Dedicated Interconnect from a Google Cloud partner, and ensure that prop
 (Incorrect. A Dedicated Interconnect connects a data center to your VPC.)
 
 Order a Partner Interconnect from a Google Cloud partner, and ensure that proper routes are configured.
+(Incorrect. A Partner Interconnect allows access to your VPC network via a partner.This would allow access between on-premises and your internal IP addresses, which greatly exceeds the scope and does not follow the principle of least privilege.)
 
 Connect the network to a Google point of presence, and enable Direct Peering.
 
@@ -92,6 +97,7 @@ Ingest data with IoT Core, process it with Dataprep, and store it in a Coldline 
 Ingest data with IoT Core, and then publish to Pub/Sub. Use BigQuery to process the data, and store it in a Standard Cloud Storage bucket.
 
 Ingest data with IoT Core, and then publish to Pub/Sub. Use Dataflow to process the data, and store it in a Nearline Cloud Storage bucket.
+(Correct! Dataflow is a fully managed service that can be used to process both streams and batches of data. Nearline is a good fit because the data could be accessed every month.)
 
 Ingest data with IoT Core, and then store it in BigQuery.
 
@@ -106,6 +112,7 @@ Stop the instance, and then use the command gcloud compute instances set-machine
 Stop the instance, and then use the command gcloud compute instances set-machine-type VM_NAME --machine-type e2-standard-8. Set the instance’s metadata to: preemptible: true. Start the instance again.
 
 Stop the instance, and then use the command gcloud compute instances set-machine-type VM_NAME --machine-type 2-custom-4-30720. Set the instance’s metadata to: preemptible: true. Start the instance again.
+(Incorrect. Although preemptible instances can save substantial money, they are not appropriate for instances that need to store persistent data locally.)
 
 10.
 You are creating a new project. You plan to set up a Dedicated interconnect between two of your data centers in the near future and want to ensure that your resources are only deployed to the same regions where your data centers are located. You need to make sure that you don’t have any overlapping IP addresses that could cause conflicts when you set up the interconnect. You want to use RFC 1918 class B address space. What should you do?
@@ -114,6 +121,7 @@ Create a new project, leave the default network in place, and then use the defau
 (Incorrect. Default mode networks create subnets for you automatically in each zone and could allow people to accidentally provision resources in other regions.)
 
 Create a new project, delete the default VPC network, set up a custom mode VPC network, and then use IP addresses in the 172.16.x.x address range to create subnets in your desired regions.
+(Correct! Custom networks give you full control.)
 
 Create a new project, delete the default VPC network, set up an auto mode VPC network, and then use the default 10.x.x.x network range to create subnets in your desired regions.
 
