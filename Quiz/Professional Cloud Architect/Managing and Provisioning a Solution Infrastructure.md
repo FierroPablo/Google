@@ -16,7 +16,8 @@ Cymbal Direct wants to allow partners to make orders programmatically, without h
 
 -The API backend should be loosely coupled. Clients should not be required to know too many details of the services they use. REST APIs using gRPC should be used for all external APIs.
 
--The API backend should be loosely coupled. Clients should not be required to know too many details of the services they use. For REST APIs, HTTP(S) is the most common protocol.
+**-The API backend should be loosely coupled. Clients should not be required to know too many details of the services they use. For REST APIs, HTTP(S) is the most common protocol.**
+_(Correct! Loose coupling has several benefits, including maintainability, versioning, and reduced complexity. Clients not knowing the backend systems means that these systems can be more easily replaced or modified, and HTTP(S) is the most common protocol used for external REST APIs.)_
 
 -The API backend should be tightly coupled. Clients should know a significant amount about the services they use. For REST APIs, HTTP(S) is the most common protocol used.
 _(Incorrect. If an API is not loosely coupled, it can become an issue for maintenance, with large, complicated monolithic applications. REST APIs are protocol-agnostic, and HTTP(S) is the most common protocol for external APIs.)_
@@ -29,7 +30,8 @@ Cymbal Direct wants a layered approach to security when setting up Compute Engin
 
 -Use labels to allow traffic only from certain sources and ports. Turn on Secure boot and vTPM.
 
--Use network tags to allow traffic only from certain sources and ports. Turn on Secure boot and vTPM.
+**-Use network tags to allow traffic only from certain sources and ports. Turn on Secure boot and vTPM.**
+_(Correct! You can use network tags with firewall rules to automatically associate instances when they are created. Secure boot and vTPM protect the OS from being compromised.)_
 
 -Use network tags to allow traffic only from certain sources and ports. Use a Compute Engine service account.
 _(Incorrect. All Compute Engine instances have an associated service account. Creating an account specifically for an instance or type of instance with limited abilities instead of the default account could be a good approach to the principle of least privilege.)_
@@ -43,6 +45,7 @@ Cymbal Direct must meet compliance requirements. You need to ensure that employe
 -Ensure that all users install Cloud VPN. Enable VPC Flow Logs for the networks you need to monitor.
 
 -Enable Identity-Aware Proxy (IAP) to allow users to access services securely. Use Google Cloud’s operations suite to view audit logs for the networks you need to monitor.
+_(Incorrect. IAP secures an application by restricting access to valid, authorized accounts. In this scenario, the intention is to restrict access based on where the request is coming from.)_
 
 -Enable VPC Service Controls, and use Google Cloud’s operations suite to view audit logs for the networks you need to monitor.
 _(Incorrect. Enabling VPC Service Controls lets you define a network perimeter. You also need to enable VPC Flow Logs. If you do not enable it, the network traffic flows will not be logged.)_
@@ -53,7 +56,8 @@ _(Incorrect. Enabling VPC Service Controls lets you define a network perimeter. 
 5.
 Cymbal Direct needs to use a tool to deploy its infrastructure. You want something that allows for repeatable deployment processes, uses a declarative language, and allows parallel deployment. You also want to deploy infrastructure as code on Google Cloud and other cloud providers. What should you do?
 
--Automate the deployment with Terraform scripts.
+**-Automate the deployment with Terraform scripts.**
+_(Correct! Terraform lets you automate and manage resources in multiple clouds.)_
 
 -Use Google Kubernetes Engine (GKE) to create deployments and manifests for your applications.
 
@@ -68,7 +72,8 @@ Cymbal Direct wants to create a pipeline to automate the building of new applica
 
 -Set up a source code repository. Run unit tests. Check in code. Deploy. Build a Docker container.
 
--Set up a source code repository. Check in code. Run unit tests. Build a Docker container. Deploy.
+**-Set up a source code repository. Check in code. Run unit tests. Build a Docker container. Deploy.**
+_(Correct! Each step is dependent on the previous step. These are in the right order.)_
 
 -Run unit tests. Deploy. Build a Docker container. Check in code. Set up a source code repository.
 _(Incorrect. The source code repository must exist to check code in and do any subsequent steps.)_
@@ -79,7 +84,8 @@ _(Incorrect. The source code repository must exist to check code in and do any s
 7.
 You need to deploy a load balancer for a web-based application with multiple backends in different regions. You want to direct traffic to the backend closest to the end user, but also to different backends based on the URL the user is accessing. Which of the following could be used to implement this?
 
--The request is received by the global external HTTP(S) load balancer. A global forwarding rule sends the request to a target proxy, which checks the URL map and selects the backend service. The backend service sends the request to Compute Engine instance groups in multiple regions.
+**-The request is received by the global external HTTP(S) load balancer. A global forwarding rule sends the request to a target proxy, which checks the URL map and selects the backend service. The backend service sends the request to Compute Engine instance groups in multiple regions.**
+_(Correct! This is the right order of operations.)_
 
 -The request is received by the SSL proxy load balancer, which uses a global forwarding rule to check the URL map, then sends the request to a backend service. The request is processed by Compute Engine instance groups in multiple regions.
 
@@ -126,3 +132,4 @@ Cymbal Direct's user account management app allows users to delete their account
 _(Incorrect. This will probably introduce human error and would require excessive work.)_
 
 -Ensure that the user clearly understands that after they delete their account, all their information will also be deleted. Remind them to download a copy of their order history and account information before deleting their account. Have the support agent copy any open or recent orders to a shared spreadsheet.
+_(Incorrect. This doesn’t achieve the goal of ensuring that the customer service team has access to the account information.)_
