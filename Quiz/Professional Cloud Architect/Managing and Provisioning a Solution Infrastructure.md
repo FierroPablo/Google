@@ -50,7 +50,8 @@ _(Incorrect. IAP secures an application by restricting access to valid, authoriz
 -Enable VPC Service Controls, and use Google Cloud’s operations suite to view audit logs for the networks you need to monitor.
 _(Incorrect. Enabling VPC Service Controls lets you define a network perimeter. You also need to enable VPC Flow Logs. If you do not enable it, the network traffic flows will not be logged.)_
 
--Enable VPC Service Controls, define a network perimeter to restrict access to authorized networks, and enable VPC Flow Logs for the networks you need to monitor.
+**-Enable VPC Service Controls, define a network perimeter to restrict access to authorized networks, and enable VPC Flow Logs for the networks you need to monitor.**
+_(Correct! Enabling VPC Service Controls lets you define a network perimeter. VPC Flow Logs lets you log network-level communication to Compute Engine instances.)_
 
 
 5.
@@ -124,9 +125,10 @@ _(Correct! Using App Engine allows for dynamic scaling based on demand, as does 
 10.
 Cymbal Direct's user account management app allows users to delete their accounts whenever they like. Cymbal Direct also has a very generous 60-day return policy for users. The customer service team wants to make sure that they can still refund or replace items for a customer even if the customer’s account has been deleted. What can you do to ensure that the customer service team has access to relevant account information?
 
--Temporarily disable the account for 30 days. Export account information to Cloud Storage, and enable lifecycle management to delete the data in 60 days.
+**-Temporarily disable the account for 30 days. Export account information to Cloud Storage, and enable lifecycle management to delete the data in 60 days.**
 
 -Restore a previous copy of the user information database from a snapshot. Have a database administrator capture needed information about the customer.
+_(Incorrect. Support agents wouldn’t be able to complete this solution, and it would require excessive work by administrators.)_
 
 -Disable the account. Export account information to Cloud Storage. Have the customer service team permanently delete the data after 30 days.
 _(Incorrect. This will probably introduce human error and would require excessive work.)_
