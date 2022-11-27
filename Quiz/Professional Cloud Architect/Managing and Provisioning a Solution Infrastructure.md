@@ -96,7 +96,7 @@ You have deployed your frontend web application in Kubernetes. Based on historic
 
 -Use the "kubectl autoscale" command to change the pod's maximum number of instances to six.
 
--Use the "kubectl autoscale" command to change the deployment’s maximum number of instances to six.
+**-Use the "kubectl autoscale" command to change the deployment’s maximum number of instances to six.**
 _(Correct! This will allow Kubernetes to scale the number of pods automatically, based on a condition like CPU load or requests per second.)_
 
 -Edit your deployment's configuration file and change the number of replicas to six.
@@ -109,7 +109,7 @@ You are working with a client who has built a secure messaging application. The 
 
 -Deploy the web application using the App Engine standard environment with a global external HTTP(S) load balancer and a network endpoint group. Use a managed instance group for the backend chat servers. Use a global SSL proxy load balancer to load-balance traffic across the backend chat servers.
 
--Deploy the web application using the App Engine standard environment with a global external HTTP(S) load balancer and a network endpoint group. Use a managed instance group for the backend chat servers. Use an external network load balancer to load-balance traffic across the backend chat servers.
+**-Deploy the web application using the App Engine standard environment with a global external HTTP(S) load balancer and a network endpoint group. Use a managed instance group for the backend chat servers. Use an external network load balancer to load-balance traffic across the backend chat servers.**
 _(Correct! Using App Engine allows for dynamic scaling based on demand, as does a managed instance group. Using an external network load balancer preserves the client's IP address.)_
 
 -Deploy the web application using the App Engine flexible environment with a global external HTTP(S) load balancer and a network endpoint group. Use an unmanaged instance group for the backend chat servers. Use an external network load balancer to load-balance traffic across the backend chat servers.
