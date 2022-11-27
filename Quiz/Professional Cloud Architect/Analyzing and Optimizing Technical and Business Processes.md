@@ -1,0 +1,118 @@
+1.
+Your development team used Cloud Source Repositories, Cloud Build, and Artifact Registry to successfully implement the build portion of an application's CI/CD process.. However, the deployment process is erroring out. Initial troubleshooting shows that the runtime environment does not have access to the build images. You need to advise the team on how to resolve the issue. What could cause this problem?
+
+-The runtime environment does not have permissions to Cloud Source Repositories in your current project.
+
+-The runtime environment does not have permissions to the Artifact Registry in your current project.
+
+-You need to specify the Artifact Registry image by name.
+
+-The Artifact Registry might be in a different project.
+
+
+2.
+You have implemented a manual CI/CD process for the container services required for the next implementation of the Cymbal Direct’s Drone Delivery project. You want to automate the process. What should you do?
+
+-Implement a build trigger that applies your build configuration when a new software update is committed to Cloud Source Repositories.
+
+-Implement and reference a source repository in your Cloud Build configuration file.
+
+-Configure and push a manifest file into an environment repository in Cloud Source Repositories.
+
+-Specify the name of your Container Registry in your Cloud Build configuration.
+
+
+3.
+The number of requests received by your application is nearing the maximum specified in your design. You want to limit the number of incoming requests until the system can handle the workload. What design pattern does this situation describe?
+
+-Applying exponential backoff
+
+-Applying a circuit breaker
+
+-Applying graceful degradation
+
+-Increasing jitter
+
+
+4.
+Developers on your team frequently write new versions of the code for one of your applications. You want to automate the build process when updates are pushed to Cloud Source Repositories. What should you do?
+
+-Implement a build trigger that references your repository and branch.
+
+-Implement a Cloud Build configuration file with build steps.
+
+-Upload application updates and Cloud Build configuration files to Cloud Source Repositories.
+
+-Set proper permissions for Cloud Build to access deployment resources.
+
+
+5.
+You want to establish procedures for testing the resilience of the delivery-by-drone solution. How would you simulate a scalability issue?
+
+-Inject a bad health check for one or more of your resources.
+
+-Block access to storage assets in one of your zones.
+
+-Block access to all resources in a zone.
+
+-Load test your application to see how it responds.
+
+
+6.
+You have an application implemented on Compute Engine. You want to increase the durability of your application. What should you do?
+
+-Implement a regional managed instance group.
+
+-Implement a scheduled snapshot on your Compute Engine instances.
+
+-Perform health checks on your Compute Engine instances.
+
+-Monitor your application’s usage metrics and implement autoscaling.
+
+
+7.
+The pilot subsystem in your Delivery by Drone service is critical to your service. You want to ensure that connections to the pilots can survive a VM outage without affecting connectivity. What should you do?
+
+-Deploy a load balancer to distribute traffic across multiple machines.
+
+-Configure proper startup scripts for your VMs.
+
+-Implement a managed instance group.
+
+-Create persistent disk snapshots.
+
+
+8.
+You are asked to implement a lift and shift operation for Cymbal Direct’s Social Media Highlighting service. You compose a Terraform configuration file to build all the necessary Google Cloud resources. What is the next step in the Terraform workflow for this effort?
+
+-Run terraform plan to verify the contents of the Terraform configuration file.
+
+-Commit the configuration file to your software repository.
+
+-Run terraform init to download the necessary provider modules.
+
+-Run terraform apply to deploy the resources described in the configuration file.
+
+
+9.
+Cymbal Direct wants to improve its drone pilot interface. You want to collect feedback on proposed changes from the community of pilots before rolling out updates systemwide. What type of deployment pattern should you implement?
+
+-You should implement A/B testing.
+
+-You should implement canary testing.
+
+-You should implement an in-place release.
+
+-You should implement a blue/green deployment.
+
+
+10.
+You are implementing a disaster recovery plan for the cloud version of your drone solution. Sending videos to the pilots is crucial from an operational perspective. What design pattern should you choose for this part of your architecture?
+
+-Warm with a high recovery time objective (RTO)
+
+-Hot with a low recovery time objective (RTO)
+
+-Hot with a high recovery time objective (RTO)
+
+-Cold with a low recovery time objective (RTO)
