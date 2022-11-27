@@ -17,7 +17,8 @@ Michael is the owner/operator of “Zneeks,” a retail shoe store that caters t
 -Zneeks is a retail shoe store that caters to sneaker aficionados.
 _(Incorrect. This does not describe the user, what they want to do, or the benefit the user would receive.)_
 
--As a shoe retailer, Michael wants to send Cymbal Direct custom purchase orders so that batches of custom shoes are sent to his customers.
+**-As a shoe retailer, Michael wants to send Cymbal Direct custom purchase orders so that batches of custom shoes are sent to his customers.**
+_(Correct! “As a [type of user], I want to [do something] so that I can [get some benefit]” is the standard format for a user story.)_
 
 -Michael is a tech-savvy owner/operator of a small business.
 
@@ -71,7 +72,8 @@ _(Incorrect. Whenever possible, use groups to manage access. It is much easier t
 -Grant access by assigning custom roles to groups. Use multiple groups for better control. Give access as low in the hierarchy as possible to prevent the inheritance of too many abilities from a higher level.
 _(Incorrect. Unless there is a specific need for a custom role, you should use predefined ones.)_
 
--Grant access by assigning predefined roles to groups. Use multiple groups for better control. Give access as low in the hierarchy as possible to prevent the inheritance of too many abilities from a higher level.
+**-Grant access by assigning predefined roles to groups. Use multiple groups for better control. Give access as low in the hierarchy as possible to prevent the inheritance of too many abilities from a higher level.**
+_(Correct! This follows recommended practices regarding organizational policies.)_
 
 -Grant access by assigning predefined roles to groups. Use multiple groups for better control. Make sure you give out access to all the children in a hierarchy under the level needed, because child resources will not automatically inherit abilities.
 
@@ -99,6 +101,7 @@ _(Incorrect. If VMs do not need to be accessed by the outside world, they should
 -Remove external IP addresses from the VM instances running the social media service and place them in a private VPC behind Cloud NAT. Any SSH connection for management should be done with Identity-Aware Proxy (IAP) or a bastion host (jump box) after allowing SSH access from IAP or a corporate network.
 
 -Limit access to the external IP addresses of the VM instances using firewall rules and place them in a private VPC behind Cloud NAT. Any SSH connection for management should be done with Identity-Aware Proxy (IAP) or a bastion host (jump box) after allowing SSH access from IAP or a corporate network.
+_(Incorrect. If VMs do not need to be accessed by the outside world, they should not have external IP addresses.)_
 
 -Remove external IP addresses from the VM instances running the social media service and place them in a private VPC behind Cloud NAT. Any SSH connection for management should be restricted to corporate network IP addresses by Google Cloud Armor.
 _(Incorrect. Without using IAP or a bastion host, the corporate network would have no way of connecting to the VMs, because VMs have no external IP addresses.)_
@@ -128,3 +131,4 @@ _(Incorrect. The reports relating to compliance vulnerabilities are on the Compl
 -Enable the Security Command Center (SCC) dashboard, asset discovery, and Security Health Analytics in the Standard tier. Export or view the PCI-DSS Report from the SCC dashboard's Compliance tab.
 
 -Enable the Security Command Center (SCC) dashboard, asset discovery, and Security Health Analytics in the Standard tier. Export or view the PCI-DSS Report from the SCC dashboard's Vulnerabilities tab.
+_(Incorrect. The reports relating to compliance vulnerabilities are on the Compliance tab. To use the Security Health Analytics that scan for common compliance vulnerabilities, you must use the Premium tier.)_
