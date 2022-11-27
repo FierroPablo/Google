@@ -2,6 +2,7 @@
 Your development team used Cloud Source Repositories, Cloud Build, and Artifact Registry to successfully implement the build portion of an application's CI/CD process.. However, the deployment process is erroring out. Initial troubleshooting shows that the runtime environment does not have access to the build images. You need to advise the team on how to resolve the issue. What could cause this problem?
 
 -The runtime environment does not have permissions to Cloud Source Repositories in your current project.
+_(Incorrect. Runtime environments do not need access to Cloud Source Repositories as part of the deployment process.)_
 
 -The runtime environment does not have permissions to the Artifact Registry in your current project.
 
@@ -13,7 +14,8 @@ Your development team used Cloud Source Repositories, Cloud Build, and Artifact 
 2.
 You have implemented a manual CI/CD process for the container services required for the next implementation of the Cymbal Direct’s Drone Delivery project. You want to automate the process. What should you do?
 
--Implement a build trigger that applies your build configuration when a new software update is committed to Cloud Source Repositories.
+**-Implement a build trigger that applies your build configuration when a new software update is committed to Cloud Source Repositories.**
+_(Correct! Configuring a build trigger automates the CI/CD process based on when the software is posted to a repository.)_
 
 -Implement and reference a source repository in your Cloud Build configuration file.
 
@@ -26,6 +28,7 @@ You have implemented a manual CI/CD process for the container services required 
 The number of requests received by your application is nearing the maximum specified in your design. You want to limit the number of incoming requests until the system can handle the workload. What design pattern does this situation describe?
 
 -Applying exponential backoff
+_(Incorrect. Exponential backoff increases the amount of time between retry requests. It does not limit them.)_
 
 -Applying a circuit breaker
 
@@ -37,7 +40,8 @@ The number of requests received by your application is nearing the maximum speci
 4.
 Developers on your team frequently write new versions of the code for one of your applications. You want to automate the build process when updates are pushed to Cloud Source Repositories. What should you do?
 
--Implement a build trigger that references your repository and branch.
+**-Implement a build trigger that references your repository and branch.**
+_(Correct! Cloud Build triggers automate the build process when new files are placed into the name and branch of the repository that you specify.)_
 
 -Implement a Cloud Build configuration file with build steps.
 
@@ -50,6 +54,7 @@ Developers on your team frequently write new versions of the code for one of you
 You want to establish procedures for testing the resilience of the delivery-by-drone solution. How would you simulate a scalability issue?
 
 -Inject a bad health check for one or more of your resources.
+_(Incorrect. Health checks help address availability needs.)_
 
 -Block access to storage assets in one of your zones.
 
@@ -62,6 +67,7 @@ You want to establish procedures for testing the resilience of the delivery-by-d
 You have an application implemented on Compute Engine. You want to increase the durability of your application. What should you do?
 
 -Implement a regional managed instance group.
+_(Incorrect. Managed instance groups improve availability, not durability.)_
 
 -Implement a scheduled snapshot on your Compute Engine instances.
 
@@ -74,6 +80,7 @@ You have an application implemented on Compute Engine. You want to increase the 
 The pilot subsystem in your Delivery by Drone service is critical to your service. You want to ensure that connections to the pilots can survive a VM outage without affecting connectivity. What should you do?
 
 -Deploy a load balancer to distribute traffic across multiple machines.
+_(Incorrect. Cloud Load Balancing helps distribute traffic across machines in multiple instance groups. It does not heal or scale VMs.)_
 
 -Configure proper startup scripts for your VMs.
 
@@ -86,6 +93,7 @@ The pilot subsystem in your Delivery by Drone service is critical to your servic
 You are asked to implement a lift and shift operation for Cymbal Direct’s Social Media Highlighting service. You compose a Terraform configuration file to build all the necessary Google Cloud resources. What is the next step in the Terraform workflow for this effort?
 
 -Run terraform plan to verify the contents of the Terraform configuration file.
+_(Incorrect. You should run the init command before you run the plan command.)_
 
 -Commit the configuration file to your software repository.
 
@@ -97,7 +105,8 @@ You are asked to implement a lift and shift operation for Cymbal Direct’s Soci
 9.
 Cymbal Direct wants to improve its drone pilot interface. You want to collect feedback on proposed changes from the community of pilots before rolling out updates systemwide. What type of deployment pattern should you implement?
 
--You should implement A/B testing.
+**-You should implement A/B testing.**
+_(Correct! A/B testing is a pattern that lets you evaluate new proposed functionality.)_
 
 -You should implement canary testing.
 
@@ -110,6 +119,7 @@ Cymbal Direct wants to improve its drone pilot interface. You want to collect fe
 You are implementing a disaster recovery plan for the cloud version of your drone solution. Sending videos to the pilots is crucial from an operational perspective. What design pattern should you choose for this part of your architecture?
 
 -Warm with a high recovery time objective (RTO)
+_(Incorrect. A warm design pattern would consist of a standby system that you would fail over to if something went wrong. The RTO would be higher than with a hot design pattern.)_
 
 -Hot with a low recovery time objective (RTO)
 
