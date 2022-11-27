@@ -126,6 +126,7 @@ _(Correct! Using App Engine allows for dynamic scaling based on demand, as does 
 Cymbal Direct's user account management app allows users to delete their accounts whenever they like. Cymbal Direct also has a very generous 60-day return policy for users. The customer service team wants to make sure that they can still refund or replace items for a customer even if the customer’s account has been deleted. What can you do to ensure that the customer service team has access to relevant account information?
 
 **-Temporarily disable the account for 30 days. Export account information to Cloud Storage, and enable lifecycle management to delete the data in 60 days.**
+_(Correct! This takes a lazy deletion approach and allows support or administrators to restore data later if necessary.)_
 
 -Restore a previous copy of the user information database from a snapshot. Have a database administrator capture needed information about the customer.
 _(Incorrect. Support agents wouldn’t be able to complete this solution, and it would require excessive work by administrators.)_
