@@ -84,10 +84,11 @@ Cymbal Direct has an application running on a Compute Engine instance. You need 
 -Create a service account for the instance. Use Access scopes to enable access to the required services.
 _(Incorrect. Access scopes are used with the Compute Engine default service account.)_
 
-**-Create a service account for each of the services the VM needs to access. Associate the service accounts with the Compute Engine instance.**
+-Create a service account for each of the services the VM needs to access. Associate the service accounts with the Compute Engine instance.
 _(Incorrect. A Compute Engine instance is associated with only one service account.)_
 
 -Create a service account and assign it the project owner role, which enables access to any needed service.
+_(Incorrect. This violates the "principle of least privilege” because assigning the project owner role gives access to unnecessary services.)_
 
 -Create a service account with one or more predefined or custom roles, which give access to the required services.
 
@@ -98,7 +99,8 @@ Cymbal Direct needs to make sure its new social media integration service can’
 -Limit access to the external IP addresses of the VM instances using a firewall rule to block all outbound traffic. Any SSH connection for management should be done with Identity-Aware Proxy (IAP) or a bastion host (jump box) after allowing SSH access from IAP or a corporate network.
 _(Incorrect. If VMs do not need to be accessed by the outside world, they should not have external IP addresses, and denying all outbound traffic would prevent connecting to external social media APIs.)_
 
--Remove external IP addresses from the VM instances running the social media service and place them in a private VPC behind Cloud NAT. Any SSH connection for management should be done with Identity-Aware Proxy (IAP) or a bastion host (jump box) after allowing SSH access from IAP or a corporate network.
+**-Remove external IP addresses from the VM instances running the social media service and place them in a private VPC behind Cloud NAT. Any SSH connection for management should be done with Identity-Aware Proxy (IAP) or a bastion host (jump box) after allowing SSH access from IAP or a corporate network.**
+_(Correct! Using Cloud NAT will prevent inbound access from the outside world but will allow connecting to social media APIs outside of the VPC. Using IAP or a bastion host allows for management by SSH, but without the complexity of using VPNs for user access.)_
 
 -Limit access to the external IP addresses of the VM instances using firewall rules and place them in a private VPC behind Cloud NAT. Any SSH connection for management should be done with Identity-Aware Proxy (IAP) or a bastion host (jump box) after allowing SSH access from IAP or a corporate network.
 _(Incorrect. If VMs do not need to be accessed by the outside world, they should not have external IP addresses.)_
@@ -126,7 +128,8 @@ Responses:
 -Enable the Security Command Center (SCC) dashboard, asset discovery, and Security Health Analytics in the Premium tier. Export or view the PCI-DSS Report from the SCC dashboard's Vulnerabilities tab.
 _(Incorrect. The reports relating to compliance vulnerabilities are on the Compliance tab.)_
 
--Enable the Security Command Center (SCC) dashboard, asset discovery, and Security Health Analytics in the Premium tier. Export or view the PCI-DSS Report from the SCC dashboard's Compliance tab.
+**-Enable the Security Command Center (SCC) dashboard, asset discovery, and Security Health Analytics in the Premium tier. Export or view the PCI-DSS Report from the SCC dashboard's Compliance tab.**
+_(Correct! The reports relating to compliance vulnerabilities are on the Compliance tab. To use the Security Health Analytics that scan for common compliance vulnerabilities, you must use the Premium tier.)_
 
 -Enable the Security Command Center (SCC) dashboard, asset discovery, and Security Health Analytics in the Standard tier. Export or view the PCI-DSS Report from the SCC dashboard's Compliance tab.
 
