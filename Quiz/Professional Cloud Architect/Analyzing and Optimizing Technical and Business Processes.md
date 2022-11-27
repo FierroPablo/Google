@@ -10,7 +10,8 @@ _(Incorrect. Runtime environments have read access permissions to Artifact Regis
 -You need to specify the Artifact Registry image by name.
 _(Incorrect. In Artifact Registry, you need to identify images by tag or digest.)_
 
--The Artifact Registry might be in a different project.
+**-The Artifact Registry might be in a different project.**
+_(Correct! Permissions must be configured to give the runtime service account permissions to the Artifact Registry in another project.)_
 
 
 2.
@@ -65,7 +66,8 @@ _(Incorrect. Ensuring that your data remains available in an outage is part of d
 -Block access to all resources in a zone.
 _(Incorrect. Responding to outages of zonal resources is a key capability in addressing availability.)_
 
--Load test your application to see how it responds.
+**-Load test your application to see how it responds.**
+_(Correct! Designing for increased customer demand is one way to ensure scalability.)_
 
 
 6.
