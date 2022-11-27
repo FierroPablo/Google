@@ -5,6 +5,7 @@ You are using Cloud Run to deploy a Flask web application named app.py written i
 _(Incorrect. Cloud Run runs as a container, not a Compute Engine instance directly. Because Cloud Debugger does not affect the user, it is a good choice.)_
 
 -Modify the Dockerfile for the Cloud Run application. Change the RUN command to 'python3 -m pdb /app.py'. Modify the script to import pdb. Deploy to Cloud Run as a canary build.
+_(Incorrect. Using the debugger bundled with Python releases is an option, but because Cloud Debugger does not affect the user, it is a better choice.)_
 
 -Use ssh to connect to the Compute Engine instance where Cloud Run is running. Run the command 'python3 -m pdb app.py' to debug the application.
 
@@ -18,6 +19,7 @@ Cymbal Direct’s warehouse and inventory system was written in Java. The system
 _(Incorrect. Cloud Profiler can help find functions or methods in your code that use unusual amounts of CPU, memory, or other system resources. Cloud Trace identifies which requests have the highest latency and narrows the scope to the microservices that cause the problem.)_
 
 -Use Error Reporting to test whether your microservices are intermittently unavailable or slow to respond to HTTPS requests. Use Cloud Profiler to determine which functions/methods in your application’s code use the most system resources. Use Cloud Trace to identify slow requests and determine which microservices/calls take the most time to respond.
+_(Incorrect. Error Reporting captures application errors/exceptions in your code and lets you view the errors in a central place.)_
 
 -Create metrics in Cloud Monitoring for your microservices to test whether they are intermittently unavailable or slow to respond to HTTPS requests. Use Cloud Profiler to determine which functions/methods in your application’s code use the most system resources. Use Cloud Trace to identify slow requests and determine which microservices/calls take the most time to respond.
 
@@ -43,7 +45,8 @@ You need to adopt Site Reliability Engineering principles and increase visibilit
 -Adopt Google Cloud’s operations suite to gain visibility into the environment. Use Cloud Trace for distributed tracing, Cloud Logging for logging, and Cloud Monitoring for monitoring, alerting, and dashboards. Page the on-call contact when issues that affect resources in the environment are detected. Use GPG to check container image signatures and ensure that only signed containers are deployed.
 _(Incorrect. On-call contacts are expected to respond with urgency to every page. Frequent paging will lead to fatigue in the short term and burnout in the long term, which eventually reduces the reliability of the service. Use Binary Authorization to ensure that only signed container images are deployed.)_
 
--Adopt Google Cloud’s operations suite to gain visibility into the environment. Use Cloud Trace for distributed tracing, Cloud Logging for logging, and Cloud Monitoring for monitoring, alerting, and dashboards. Only page the on-call contact about novel issues or events that haven’t been seen before. Use Binary Authorization to ensure that only signed container images are deployed.
+**-Adopt Google Cloud’s operations suite to gain visibility into the environment. Use Cloud Trace for distributed tracing, Cloud Logging for logging, and Cloud Monitoring for monitoring, alerting, and dashboards. Only page the on-call contact about novel issues or events that haven’t been seen before. Use Binary Authorization to ensure that only signed container images are deployed.**
+_(Correct! Google Cloud’s operations suite is tightly integrated with different components in the suite and other open source tools. It allows for streamlined analysis of issues without requiring additional management overhead to set up and maintain the tools.)_
 
 -Adopt Google Cloud’s operations suite to gain visibility into the environment. Use Cloud Trace for distributed tracing, Cloud Logging for logging, and Cloud Monitoring for monitoring, alerting, and dashboards. Only page the on-call contact about novel issues or events that haven’t been seen before. Use GNU Privacy Guard (GPG) to check container image signatures and ensure that only signed containers are deployed.
 
@@ -84,7 +87,8 @@ Responses:
 -Assign the predefined Billing Account Administrator role to Mahesh. Create a project budget. Configure billing alerts to be sent to the Project Owner. Use resource quotas to cap how much money can be spent.
 _(Incorrect. Use groups with IAM to simplify management. Billing Alerts should be sent to the Billing Administrator.)_
 
--Use the predefined Billing Account Administrator role for the Billing Administrator group, and assign Mahesh to the group. Create a project budget. Configure billing alerts to be sent to the Billing Administrator. Use resource quotas to cap how many resources can be deployed.
+**-Use the predefined Billing Account Administrator role for the Billing Administrator group, and assign Mahesh to the group. Create a project budget. Configure billing alerts to be sent to the Billing Administrator. Use resource quotas to cap how many resources can be deployed.**
+_(Correct! Use groups with IAM to simplify management. Billing Alerts should be sent to the Billing Administrator. Quotas are based on the number of resources, such as instances or CPU, not budget.)_
 
 -Assign the predefined Billing Account Administrator role to Mahesh. Create a project budget. Configure billing alerts to be sent to the Billing Administrator. Use resource quotas to cap how many resources can be deployed.
 
@@ -98,6 +102,7 @@ Cymbal Direct has a new social media integration service that pulls images of it
 _(Incorrect. This answer is more appropriate for a critical incident. This response doesn’t consider the severity of the issue and the impact on the developer and response team. Managing a service should not require a “heroic effort.” Take basic mitigation steps, such as increasing the number of instances, and the developer can fix the issue on Monday. Google Cloud’s operations suite will close an incident if the alerting condition is no longer being met.)_
 
 -Increase the maximum number of instances in the MIG and verify that this resolves the issue. Check the incident documentation or labels to determine the on-call contact. Appoint an incident commander, and open a chat channel, or conference call for emergency response. Investigate and resolve the root cause of the issue. Write a blameless post-mortem and identify steps to prevent the issue, to ensure a culture of continuous improvement.
+_(Incorrect. This answer is more appropriate for a critical incident. This response doesn’t consider the severity of the issue and the impact on the developer and response team. Managing a service should not require a “heroic effort.” Take basic mitigation steps such as increasing the number of instances, and the developer can fix the issue on Monday.)_
 
 -Increase the maximum number of instances in the MIG and verify that this resolves the issue. Ensure that the ticket is annotated with your solution. Create a normal work ticket for the application developer with a link to the incident. Mark the incident as closed.
 
@@ -111,6 +116,7 @@ Cymbal Direct releases new versions of its drone delivery software every 1.5 to 
 _(Incorrect. A waterfall process means that you are generally targeting large full releases. This approach was appropriate for boxed software that incurred significant costs in terms of time, manufacturing resources, infrastructure, and expense for a release. Larger releases are more complex and more likely to break, and they are difficult to troubleshoot because many changes are made at the same time. Smaller, frequent releases with an automated build process that includes integrated testing with Test Driven Development (TDD) are less likely to require rollbacks, and rollbacks are simpler.)_
 
 -Adopt an “agile” development process. Maintain the current release schedule. Automate build processes from a source repository. Automate testing after the build process. Use Cloud Monitoring, Cloud Logging, and Cloud Alerting to ensure visibility. Deploy the previous version if problems are detected and you need to roll back.
+_(Incorrect. An agile development process should generally reduce the time between releases as much as possible. Testing should be integrated into the build. Using a canary deployment can let you detect issues before you deploy a new version at scale.)_
 
 -Adopt a “waterfall” development process. Maintain the current release schedule. Ensure that documentation explains how all the features interact. Ensure that the entire application is tested in a staging environment before the release. Ensure that the process to roll back the release is documented. Use Cloud Monitoring, Cloud Logging, and Cloud Alerting to ensure visibility.
 
@@ -123,7 +129,8 @@ Your environment has multiple projects used for development and testing. Each pr
 -Configure billing export to BigQuery. Create a Google Cloud budget for each project. Configure a billing alert to notify billing admins and users when their budget is exceeded. Modify the build scripts/pipeline to label all resources with the label “creator” set to the developer’s email address. Use spot (preemptible) instances wherever possible.
 _(Incorrect. This will notify the Billing Account Administrator and all other users of the project, regardless of who exceeded their budget.)_
 
--Configure billing export to BigQuery. Create a Google Cloud budget for each project. Create a Pub/Sub topic for developer-budget-notifications. Create a Cloud Function to notify the developer based on the labels. Modify the build scripts/pipeline to label all resources with the label “creator” set to the developer’s email address. Use spot (preemptible) instances wherever possible.
+**-Configure billing export to BigQuery. Create a Google Cloud budget for each project. Create a Pub/Sub topic for developer-budget-notifications. Create a Cloud Function to notify the developer based on the labels. Modify the build scripts/pipeline to label all resources with the label “creator” set to the developer’s email address. Use spot (preemptible) instances wherever possible.**
+_(Correct! You can have billing notifications sent to a Pub/Sub topic that triggers a Cloud Function. The function can then notify the appropriate developer.)_
 
 -Configure billing export to BigQuery. Create a Google Cloud budget for each project. Create a group for the developers in each project, and add them to the appropriate group. Create a notification channel for each group. Configure a billing alert to notify the group when their budget is exceeded. Modify the build scripts/pipeline to label all resources with the label “creator” set to the developer’s email address. Use spot (preemptible) instances wherever possible.
 
