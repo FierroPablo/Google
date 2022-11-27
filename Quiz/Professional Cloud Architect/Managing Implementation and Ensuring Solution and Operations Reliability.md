@@ -8,6 +8,7 @@ _(Incorrect. Cloud Run runs as a container, not a Compute Engine instance direct
 _(Incorrect. Using the debugger bundled with Python releases is an option, but because Cloud Debugger does not affect the user, it is a better choice.)_
 
 -Use ssh to connect to the Compute Engine instance where Cloud Run is running. Run the command 'python3 -m pdb app.py' to debug the application.
+_(Incorrect. Cloud Run runs as a container, not a Compute Engine instance directly. Using the debugger bundled with Python releases is an option, but because Cloud Debugger does not affect the user, it is a better choice)_
 
 -Modify the Dockerfile for the Cloud Run application. Add 'RUN 'pip install google-python-cloud-debugger' to the Dockerfile. Modify the script to import googleclouddebugger. Use 'gcloud debug' to debug the application.
 
@@ -21,7 +22,8 @@ _(Incorrect. Cloud Profiler can help find functions or methods in your code that
 -Use Error Reporting to test whether your microservices are intermittently unavailable or slow to respond to HTTPS requests. Use Cloud Profiler to determine which functions/methods in your application’s code use the most system resources. Use Cloud Trace to identify slow requests and determine which microservices/calls take the most time to respond.
 _(Incorrect. Error Reporting captures application errors/exceptions in your code and lets you view the errors in a central place.)_
 
--Create metrics in Cloud Monitoring for your microservices to test whether they are intermittently unavailable or slow to respond to HTTPS requests. Use Cloud Profiler to determine which functions/methods in your application’s code use the most system resources. Use Cloud Trace to identify slow requests and determine which microservices/calls take the most time to respond.
+**-Create metrics in Cloud Monitoring for your microservices to test whether they are intermittently unavailable or slow to respond to HTTPS requests. Use Cloud Profiler to determine which functions/methods in your application’s code use the most system resources. Use Cloud Trace to identify slow requests and determine which microservices/calls take the most time to respond.**
+_(Correct! Capturing metrics about the health of your microservices could identify an issue. Cloud Profiler can help find the functions or methods in your code that use unusual amounts of CPU, memory, or other system resources. This might indicate where to look for performance problems. Cloud Trace identifies which requests have the highest latency and narrows the scope to the microservices that cause the problem.)_
 
 -Use Error Reporting to test whether your microservices are intermittently unavailable or slow to respond to HTTPS requests. Use Cloud Trace to determine which functions/methods in your application’s code Use the most system resources. Use Cloud Profiler to identify slow requests and determine which microservices/calls take the most time to respond.
 
@@ -105,6 +107,7 @@ _(Incorrect. This answer is more appropriate for a critical incident. This respo
 _(Incorrect. This answer is more appropriate for a critical incident. This response doesn’t consider the severity of the issue and the impact on the developer and response team. Managing a service should not require a “heroic effort.” Take basic mitigation steps such as increasing the number of instances, and the developer can fix the issue on Monday.)_
 
 -Increase the maximum number of instances in the MIG and verify that this resolves the issue. Ensure that the ticket is annotated with your solution. Create a normal work ticket for the application developer with a link to the incident. Mark the incident as closed.
+_(Incorrect. Google Cloud’s operations suite will close an incident if the alerting condition is no longer being met.)_
 
 -Increase the maximum number of instances in the MIG and verify that this resolves the issue.
 
@@ -119,6 +122,7 @@ _(Incorrect. A waterfall process means that you are generally targeting large fu
 _(Incorrect. An agile development process should generally reduce the time between releases as much as possible. Testing should be integrated into the build. Using a canary deployment can let you detect issues before you deploy a new version at scale.)_
 
 -Adopt a “waterfall” development process. Maintain the current release schedule. Ensure that documentation explains how all the features interact. Ensure that the entire application is tested in a staging environment before the release. Ensure that the process to roll back the release is documented. Use Cloud Monitoring, Cloud Logging, and Cloud Alerting to ensure visibility.
+_(Incorrect. A waterfall process means that you are generally targeting large full releases. This approach was appropriate for boxed software that incurred significant costs in terms of time, manufacturing resources, infrastructure, and expense for a release. Larger releases are more complex and more likely to break, and they are difficult to troubleshoot because many changes are made at the same time. Smaller, frequent releases with an automated build process that includes integrated testing with Test Driven Development (TDD) are less likely to require rollbacks, and rollbacks are simpler.)_
 
 -Adopt an “agile” development process. Reduce the time between releases as much as possible. Automate the build process from a source repository, which includes versioning and self-testing. Use Cloud Monitoring, Cloud Logging, and Cloud Alerting to ensure visibility. Use a canary deployment to detect issues that could cause rollback.
 
