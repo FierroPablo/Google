@@ -4,13 +4,13 @@ Which of the following tasks are part of the process when configuring a managed 
 Choosing instance Machine type
 (Incorrect. This is part of your instance template definition.)
 
-Providing Number of instances
+**Providing Number of instances**
 (Correct! Number of instances is part of your managed instance group configuration.)
 
 Configuring the operating system
 (Incorrect. This is part of your instance template definition.)
 
-Defining Health checks
+**Defining Health checks**
 (Correct! Health checks are part of your managed instance group configuration.)
 
 Specifying Persistent disks
@@ -24,7 +24,7 @@ kubectl run
 
 kubectl create
 
-kubectl apply
+**kubectl apply**
 (Correct! kubectl apply creates and updates Kubernetes objects in a declarative way from manifest files.)
 
 kubectl replace
@@ -38,7 +38,7 @@ gcloud compute list snapshots
 
 gcloud snapshots list
 
-gcloud compute snapshots list
+**gcloud compute snapshots list**
 (Correct! gcloud commands are built with groups and subgroups, followed by a command, which is a verb. In this example, Compute is the Group, snapshots is the subgroup, and list is the command.)
 
 gcloud compute snapshots get
@@ -55,7 +55,7 @@ Delete the object the snapshot was created from.
 Delete the downstream incremental snapshots before deleting the main reference.
 (Incorrect. This is not required to delete a scheduled snapshot and would be a lot of manual work.)
 
-Detach the snapshot schedule before deleting it.
+**Detach the snapshot schedule before deleting it.**
 (Correct! You can’t delete a snapshot schedule that is still attached to a persistent disk.)
 
 
@@ -65,7 +65,7 @@ You want to implement a lifecycle rule that changes your storage type from stand
 IsLive
 (Incorrect. IsLive has to do with whether or not the object you are looking at is the latest version. It is not date-based.)
 
-CreatedBefore
+**CreatedBefore**
 (Correct! CreatedBefore lets you specify a date.)
 
 NumberofNewerVersions
@@ -73,7 +73,7 @@ NumberofNewerVersions
 
 Age
 
-MatchesStorageClass
+**MatchesStorageClass**
 (Correct! MatchesStorageClass is required to look for objects with a standard storage type.)
 
 
@@ -87,7 +87,7 @@ Pods
 
 Pod templates
 
-Services
+**Services**
 (Correct! Service endpoints are defined by pods with labels that match those specified in the service configuration file. Services then specify how those pods are exposed.)
 
 
@@ -101,7 +101,7 @@ gcloud networks subnets expand-ip-range mysubnet --region us-central1 --prefix-l
 
 gcloud compute networks subnets expand-ip-range mysubnet --region us-central1 --prefix-length 20
 
-gcloud compute networks subnets expand-ip-range mysubnet --region us-central1 --prefix-length 21
+**gcloud compute networks subnets expand-ip-range mysubnet --region us-central1 --prefix-length 21**
 (Correct! This command gives a total of 2046 addresses available and meets the requirement.)
 
 
@@ -117,7 +117,7 @@ Configure your service object with a type: LoadBalancer.
 Annotate your ingress object with an ingress.class of “gce.”
 (Incorrect. To implement an internal load balancer, the ingress class needs to be “gce-internal.”)
 
-Annotate your service object with a neg reference.
+**Annotate your service object with a neg reference.**
 (Correct! This is correct because an internal http(s) load balancer can only use NEGs.)
 
 
@@ -127,7 +127,7 @@ You have a Cloud Run service with a database backend. You want to limit the numb
 Set Concurrency settings.
 (Incorrect. Concurrency is how many users can connect to a particular instance. It does not directly affect connections to backend services.)
 
-Set Max instances.
+**Set Max instances.**
 (Correct! Max instances control costs, keeping you from starting too many instances by limiting your number of connections to a backing service.)
 
 Set Min instances.
@@ -138,7 +138,7 @@ Set CPU Utilization.
 10.
 Cymbal Superstore’s supply chain management system has been deployed and is working well. You are tasked with monitoring the system’s resources so you can react quickly to any problems. You want to ensure the CPU usage of each of your Compute Engine instances in us-central1 remains below 60%. You want an incident created if it exceeds this value for 5 minutes. You need to configure the proper alerting policy for this scenario. What should you do?
 
-Choose resource type of VM instance and metric of CPU utilization, condition trigger if any time series violates, condition is above, threshold is .60 for 5 minutes.
+**Choose resource type of VM instance and metric of CPU utilization, condition trigger if any time series violates, condition is above, threshold is .60 for 5 minutes.**
 (Correct! All the values of this statement match the scenario.)
 
 Choose resource type of VM instance and metric of CPU utilization, condition trigger all time series violates, condition is above, threshold is .60 for 5 minutes.
