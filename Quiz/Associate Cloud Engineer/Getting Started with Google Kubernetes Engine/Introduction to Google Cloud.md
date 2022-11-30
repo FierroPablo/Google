@@ -184,5 +184,3 @@ _Feedback: Review the lesson on Interacting with Google Cloud._
 
 D. The Google Cloud Console
 _Feedback: Review the lesson on Interacting with Google Cloud._
-
-.
