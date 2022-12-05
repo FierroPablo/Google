@@ -66,3 +66,6 @@ C. IaC is a process to define, provision, and manage cloud infrastructure by wri
 
 D. IaC is a data warehouse running on serverless infrastructure.
 
+
+
+5.
